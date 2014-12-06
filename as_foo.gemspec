@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["tmaeda@ruby-sapporo.org"]
   spec.summary       = "Convert ruby string to foo."
   spec.description   = ""
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/tmaeda/as_foo"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
