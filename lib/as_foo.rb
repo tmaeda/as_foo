@@ -1,5 +1,9 @@
 require "as_foo/version"
+require "as_foo/as_html"
 
 module AsFoo
-  # Your code goes here...
+end
+
+class String
+  include AsFoo::AsHtml
 end
