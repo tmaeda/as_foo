@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = AsFoo::VERSION
   spec.authors       = ["tmaeda"]
   spec.email         = ["tmaeda@ruby-sapporo.org"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = "Convert ruby string to foo."
+  spec.description   = ""
   spec.homepage      = ""
   spec.license       = "MIT"
 
