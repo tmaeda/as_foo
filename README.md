@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Requirement
 
-- `w3m`, `lynx`, `links` or `elinks` command to use `as_html`
+- `w3m`, `lynx`, `links` or `elinks` command to use `as_html` (default: :w3m)
 - `redcarpet` gem to use `as_markdown`
 
 ## Usage
@@ -67,6 +67,29 @@ Japan
 
                           (C) 2013 - Privacy & Terms
 
+=> nil
+
+>> open("https://www.google.com/?hl=en").read.as_html(with: :lynx)
+
+   Search Images Maps Play YouTube Gmail Drive Calendar More ?
+   Web History | Settings | Sign in
+
+
+      [chrome-48.png] A faster way to browse the web
+                   Install Google Chrome
+
+   &#19982;&#35613;&#37326;&#26230;&#23376; &#29983;&#35477; 136
+   &#21608;&#24180;
+
+
+   _________________________________________________________
+        Google Search I'm Feeling Lucky Advanced searchLanguage tools
+
+   Google.co.jp offered in: &#26085;&#26412;&#35486;
+
+   Advertising ProgramsBusiness SolutionsAbout GoogleGoogle.com
+
+                          ? 2013 - Privacy & Terms
 => nil
 ```
 
