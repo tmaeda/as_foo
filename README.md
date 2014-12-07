@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Requirement
 
-- `w3m`, `lynx`, `links` or `elinks` command to use `as_html` (default: :w3m)
+- `w3m`, `lynx`, `links` or `elinks` command to use `as_html` (The command used to render html is autodetected.)
 - `redcarpet` gem to use `as_markdown`
 
 ## Usage
