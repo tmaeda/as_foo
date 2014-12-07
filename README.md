@@ -18,16 +18,21 @@ Or install it yourself as:
 
     $ gem install as_foo
 
+## Requirement
+
+- `w3m`, `lynx`, `links` or `elinks` command to use `as_html`
+- `redcarpet` gem to use `as_markdown`
+
 ## Usage
 
 ```
 >> require 'as_foo'
 => true
->> md = <<MD
+>> md = <<MARKDOWN
 # Sample
 - a
 - b
-MD
+MARKDOWN
 => "# Sample\n- a\n- b\n"
 >> md.as_markdown
 => "<h1>Sample</h1>\n\n<ul>\n<li>a</li>\n<li>b</li>\n</ul>\n"
