@@ -2,6 +2,7 @@ require 'tempfile'
 
 module AsFoo
   module AsHtml
+    # @return [String] converted string
     def as_html(with: :w3m, options: nil)
       case with
       when :w3m
@@ -15,8 +16,9 @@ module AsFoo
       when :links
         Tempfile.open ["as_foo", ".html"] do |src|
           src.puts self.to_s
+          src.flush
 
-          system "links -dump #{src.path}"
+          `links -dump #{src.path}`
         end
       when :elinks
         IO.popen("elinks -dump -no-numbering -no-references", "w") do |elinks|
