@@ -1,4 +1,5 @@
 require 'tempfile'
+require 'open3'
 
 module AsFoo
   module AsHtml
@@ -18,12 +19,16 @@ module AsFoo
 
       case pager
       when :w3m
-        IO.popen("w3m -dump -T text/html", "w") do |w3m|
-          w3m.puts self.to_s
+        Open3.popen3("w3m -dump -T text/html") do |stdin, stdout, stderr|
+          stdin.puts self.to_s
+          stdin.close
+          stdout.read
         end
       when :lynx
-        IO.popen("lynx -dump -nonumbers -nolist -stdin", "w") do |lynx|
-          lynx.puts self.to_s
+        Open3.popen3("lynx -dump -nonumbers -nolist -stdin") do |stdin, stdout, stderr|
+          stdin.puts self.to_s
+          stdin.close
+          stdout.read
         end
       when :links
         Tempfile.open ["as_foo", ".html"] do |src|
@@ -33,8 +38,10 @@ module AsFoo
           `links -dump #{src.path}`
         end
       when :elinks
-        IO.popen("elinks -dump -no-numbering -no-references", "w") do |elinks|
-          elinks.puts self.to_s
+        Open3.popen3("elinks -dump -no-numbering -no-references") do |stdin, stdout, stderr|
+          stdin.puts self.to_s
+          stdin.close
+          stdout.read
         end
       else
         raise ArgumentError.new("unexpected method #{pager}")

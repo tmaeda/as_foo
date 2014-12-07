@@ -36,18 +36,17 @@ MARKDOWN
 => "# Sample\n- a\n- b\n"
 >> md.as_markdown
 => "<h1>Sample</h1>\n\n<ul>\n<li>a</li>\n<li>b</li>\n</ul>\n"
->> md.as_markdown.as_html
+>> puts md.as_markdown.as_html
 Sample
 
   • a
   • b
 
 => nil
->>
 
 >> require 'open-uri'
 => true
->> open("https://www.google.com/?hl=en").read.as_html
+>> puts open("https://www.google.com/?hl=en").read.as_html
 Search Images Maps Play YouTube Gmail Drive Calendar More >>
 Web History | Settings | Sign in
 
@@ -69,7 +68,7 @@ Japan
 
 => nil
 
->> open("https://www.google.com/?hl=en").read.as_html(with: :lynx)
+>> puts open("https://www.google.com/?hl=en").read.as_html(with: :lynx)
 
    Search Images Maps Play YouTube Gmail Drive Calendar More ?
    Web History | Settings | Sign in
